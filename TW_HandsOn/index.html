@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Great Home Page in HTML5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
+
+</head>
+
+<body>
+    <div class="container">
+        <header id="header" role="banner">
+            <h1>
+                <a href="/">Great Home Page in HTML5</a>
+            </h1>
+        </header>
+        <nav id="nav" role="navigation">
+            <ul>
+                <li>
+                    <a href="/about" id="about">About</a>
+                </li>
+                <li>
+                    <a href="/articles">Articles</a>
+                </li>
+                <li>
+                    <a href="/staff">Staff</a>
+                </li>
+                <li>
+                    <a href="/contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <h1>Address Book</h1>
+        <article id="main" role="main">
+
+        </article>
+        <form action="" method="get" id="search-form">
+            <div class="section">
+                <label for="q">Search address book</label>
+                <input type="search" id="q" required placeholder="type a name" />
+            </div>
+            <div class="button-group">
+                <button class="btn btn-primary" type="submit" id="btn-search">search</button>
+                <button class="btn btn-secondary" type="button" id="get-all">get all contacts</button>
+                <button class="btn btn-danger" type="button" id="remove-all">remove all contacts</button>
+            </div>
+        </form>
+
+        <div id="output" class="panel panel-primary">
+
+        </div>
+        <footer id="footer" role="contentinfo">
+            <p>&copy; 2018 Awesome site</p>
+        </footer>
+    </div>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/address.js"></script>
+</body>
+
+</html>
