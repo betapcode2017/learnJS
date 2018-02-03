@@ -57,6 +57,32 @@ var adr = {
     },
     removeActiveSection: function() {
         this.parentNode.removeAttribute("class");
+    },
+
+    addHoverClass: function() {
+        this.setAttribute("class","hovering");
+    },
+
+    removeHoverClass: function() {
+        this.removeAttribute("class");
+    },
+
+    submitSearch: function(event) {
+
+        event.preventDefault();
+
+        var search = document.getElementById("q").value;
+        var book = contacts.addressBook;
+        var target = document.getElementById("output");
+        target.innerHTML = "";
+
+        if(book.length > 0 && search !== "") {
+            for(var i = 0; i < book.length; i++) {
+                if(book[i].name.indexOf(search) !== -1) {
+                    target.innerHTML += '<p class="panel-body">' + book[i].name + ', <a href="mailto:' + book[i].email +'">' + book[i].email + '</a></p>';
+                }
+            }
+        }
     }
 };
 
@@ -69,5 +95,12 @@ btnRemoveAll.addEventListener("click", adr.removeAllContacts, false);
 var searchField = document.getElementById("q");
 searchField.addEventListener("focus", adr.addActiveSection, false);
 
-searchField.addEventListener("blur" , removeActiveSection, false);
+searchField.addEventListener("blur" , adr.removeActiveSection, false);
 
+var searchForm = document.getElementById("search-form");
+searchForm.addEventListener("mouseover", adr.addHoverClass, false);
+searchForm.addEventListener("mouseout", adr.removeHoverClass, false);
+
+//var btnSearch = document.getElementById("btn-search");
+//btnSearch.addEventListener("submit", adr.submitSearch, false);
+searchForm.addEventListener("submit", adr.submitSearch, false);
